@@ -1,38 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Thank you for taking the time to work on our assignment.
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+The goal of this assignment is for us to get a better idea of your ability while not taking too much of your time.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Requirements
+
+We like programmers who are curious and comfortable with new technology. We'd love for you to use the new Next.js app directory. But if you feel more comfortable with the traditional pages structure then go for it! In case you do not have enough time feel free to skip parts of the assignment.
+
+The criteria on which you are judged:
+
+#. The simplicity and structure of your state
+#. How well you use the Next.js features such as SSR
+#. Readability of your code
+#. Performance for the user
+#. How well you use components
+#. Selection of your libraries and frameworks
+
+Bonus points for a beautiful application.
+
+## Assignment
+
+#### 1. Auth
+
+Use the `/api/auth` endpoint to authenticate and show us how you keep the authentication state throughout the frontend. The correct username and password is admin/admin.
+
+**Parameters**
+| Name | Required| Type |
+| --- | ------ |----------|
+| username | Required | String |
+| password | Required | String |
+
+**Response**
+
+```json
+{
+  "auth": true || false
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### 2. Create
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a page with a form that is only accessible by authenticated users. Use the `/api/create` endpoint to create a new object with the following validated attributes:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Name, should have at least 2 characters and no more than 1000.
+2. Password, should have at least a number, a special character, and be more than 8 characters long.
+3. A valid vietnamese phone number
+4. An email address
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**Parameters**
+| Name | Required| Type |
+| --- | ------ |----------|
+| name | Required | String |
+| password | Required | String |
+| phone | Required | String |
+| email | Required | String |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Response**
 
-## Learn More
+```json
+{
+  "success": true || false
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### 3. View
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a page where only authenticated users can see a paginated table with the return data. Get the data from `/api/view`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Parameters**
+| Name | Required| Type |
+| --- | ------ |----------|
+| offset | Required | String |
+| limit | Required | String |
 
-## Deploy on Vercel
+**Response**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```json
+{
+  "total": 205,
+  "limit": 2,
+  "offset": 10,
+  "data": [
+    {
+      "id": "63f2f7f75a9c799b30c04ce0",
+      "name": "Lena Woodward",
+      "email": "lenawoodward@earthwax.com",
+      "phone": "+84 (968) 510-2748"
+    },
+    {
+      "id": "63f2f7f77fc65f4eae54cbd0",
+      "name": "Petersen Jacobson",
+      "email": "petersenjacobson@earthwax.com",
+      "phone": "+84 (812) 589-2242"
+    }
+  ]
+}
+```
