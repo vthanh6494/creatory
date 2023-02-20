@@ -10,12 +10,12 @@ We like programmers who are curious and comfortable with new technology. We'd lo
 
 The criteria on which you are judged:
 
-#. The simplicity and structure of your state
-#. How well you use the Next.js features such as SSR
-#. Readability of your code
-#. Performance for the user
-#. How well you use components
-#. Selection of your libraries and frameworks
+1. The simplicity and structure of your state
+2. How well you use the Next.js features such as SSR
+3. Readability of your code
+4. Performance for the user
+5. How well you use components
+6. Selection of your libraries and frameworks
 
 Bonus points for a beautiful application.
 
