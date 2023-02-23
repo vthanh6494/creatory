@@ -189,7 +189,7 @@ export const SignupComponent = () => {
                 <div
                   className={[
                     s.inputWrap,
-                    errorsFe?.password_confirm ? s.errorsFe : "",
+                    errorsFe?.phone ? s.errorsFe : "",
                   ].join(" ")}
                 >
                   <label htmlFor="phone" className={inter.className}>
