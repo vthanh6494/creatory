@@ -25,7 +25,7 @@
 
 ##### Usecase:
 - Have not logined (don't have key-value: ```{ "authorization": "true"}``` in localstorage, showing ```LoginComponent``` and text "Please login first"
-- User logined, but there is no data retrun, showing text "There is no item"
+- User logined, but there is no data, showing text "There is no item"
 - User logined and data is returned, showing table of data with pagination and page size. Change page number (offset) or page size (limit), force fetch API with new offset and limit.
 
 
