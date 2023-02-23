@@ -18,8 +18,10 @@ export const SignupComponent = () => {
   const [seePass, setSeePass] = useState(false);
   const [textPass, setTextPass] = useState("show");
   const [errorsFe, setErrorsFe] = useState<any>();
+  const [clickedSubmitBtn, setClickedSubmitBtn] = useState<boolean>(false);
 
   const handleValidate = (values: any, isInSubmit?: boolean) => {
+    if (!clickedSubmitBtn && !isInSubmit) return;
     const errors: any = {};
     const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     const regexPass = /^(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{9,}$/i;
@@ -75,6 +77,7 @@ export const SignupComponent = () => {
                 phone: "",
               }}
               onSubmit={async (values) => {
+                setClickedSubmitBtn(true);
                 const errs = handleValidate(values, true);
                 if (Object.values(errs).length || loading) return;
                 setLoading(true);
@@ -91,7 +94,7 @@ export const SignupComponent = () => {
                   if (res.success) {
                     setAuth();
                     setRes({
-                      detail: "Your account created successfully.",
+                      detail: "Your account has been created successfully.",
                       code: CODE_SUCCESS,
                     });
                   } else {

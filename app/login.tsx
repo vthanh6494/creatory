@@ -52,7 +52,6 @@ export const LoginComponent = ({
             if (data.auth) {
               setAuth();
               if (redirectLink) router.push(redirectLink);
-              // window.location.href = VIEW_LINK;
             }
             if (data.errorDetails) {
               setMessage({ detail: data.errorDetails, code: CODE_FAILED });
