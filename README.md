@@ -97,3 +97,4 @@ Create a page where only authenticated users can see a paginated table with the 
   ]
 }
 ```
+# creatory
