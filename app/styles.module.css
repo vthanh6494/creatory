@@ -1,0 +1,250 @@
+.form {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.inputWrap {
+  display: block;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.inputWrap label {
+  display: inline-block;
+
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.inputWrap input {
+  padding: 9px 12px;
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+}
+
+.textPass {
+  position: absolute;
+  right: 10px;
+  top: 57%;
+  cursor: pointer;
+  width: fit-content;
+  transform: translate(0, -50%);
+  font-size: 12px;
+  color: #878495;
+}
+
+.errorsFe input {
+  border: 1px solid #f6555b;
+}
+
+.btnSubmit {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.btnSubmit button,
+.btnSubmit .button {
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+
+  color: #fff;
+  font-size: 14px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btnSubmit a {
+  text-decoration: none;
+}
+
+.btnSubmit p {
+  cursor: pointer;
+}
+
+.btnSubmit .secondarybtn {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.btnSubmit .secondarybtn:hover {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.btnSubmit .primarybtn {
+  background-color: #b954f8;
+  box-shadow: 0px 20px 35px rgba(167, 28, 255, 0.4);
+}
+
+.btnSubmit .primarybtn:hover {
+  background-color: hsl(277deg 79% 56%);
+}
+
+.note {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #878495;
+  padding-right: 16px;
+}
+
+.link a {
+  color: #ebebee;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+.inputWrap .errFeMgs {
+  position: absolute;
+  bottom: -19px;
+  left: 0px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #f6555b;
+}
+
+.notePassword {
+  margin-top: 5px;
+  font-size: 10px;
+  color: #878495;
+}
+
+.note {
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #878495;
+  font-size: 20px;
+  text-align: center;
+}
+
+.listView {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 100%;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.listView table {
+  border-collapse: collapse;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.listView thead tr th {
+  font-weight: 500;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.listView tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.listView th,
+.listView td {
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.listView .pagination-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationCotrol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding: 8px;
+  width: 100%;
+
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: black;
+}
+
+.paginationCotrol select {
+  background: transparent;
+  color: #fff;
+  padding: 2px;
+  font-size: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  width: 50px;
+}
+
+.paginationCotrol select:focus-visible {
+  border: none !important;
+}
+
+.selectGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.pageSize {
+  font-size: 13px;
+}
+
+@media screen and (min-width: 769px) {
+  .form {
+    padding: 30px 50px 50px;
+    margin-top: 50px;
+  }
+
+  .inputWrap {
+    margin-bottom: 40px;
+  }
+
+  .btnSubmit button {
+    padding: 7px 24px;
+  }
+
+  .listView th,
+  .listView td {
+    padding: 16px;
+  }
+
+  .paginationCotrol {
+    display: flex;
+    align-items: center;
+
+    position: static;
+    transform: none;
+  }
+}
