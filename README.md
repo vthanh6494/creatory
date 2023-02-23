@@ -7,7 +7,7 @@
 
 ### 1. Auth - url - ```/```
 
-- Login with username/password admin/admin
+- Login with username/password ```admin/admin```
 
 ##### Usecase:
 - when logined, save localstorage with key-value: ```{ "authorization": "true"}```, then redirect user to view page.
