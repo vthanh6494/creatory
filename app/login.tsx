@@ -24,16 +24,7 @@ export const LoginComponent = ({
   const [message, setMessage] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(false);
   const [seePass, setSeePass] = useState(false);
-  const [textPass, setTextPass] = useState("show");
   const router = useRouter();
-
-  useEffect(() => {
-    if (seePass) {
-      setTextPass("hide");
-    } else {
-      setTextPass("show");
-    }
-  }, [seePass]);
 
   return (
     <div>
@@ -85,7 +76,7 @@ export const LoginComponent = ({
               className={[s.textPass, inter.className].join(" ")}
               onClick={() => setSeePass((seePass) => !seePass)}
             >
-              {textPass}
+              {seePass ? "hide" : "show"}
             </div>
           </div>
           <div className={s.btnSubmit}>

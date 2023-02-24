@@ -34,7 +34,6 @@ export const ViewComponent = () => {
   const [pageSize, setPagesize] = useState<number>(LIMIT);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalItems, setTotalItems] = useState<number>(0);
-  const [selectedOption, setSelectedOption] = useState(null);
 
   const [items, setItems] = useState<any>([]);
 

@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import "./globals.css";
 
 import { Field, Form, Formik } from "formik";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import s from "./styles.module.css";
 import { Loading, NotiComponent } from "./components/notification";
 import { POST, setAuth } from "./helper";
@@ -16,7 +16,6 @@ export const SignupComponent = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const [seePass, setSeePass] = useState(false);
-  const [textPass, setTextPass] = useState("show");
   const [errorsFe, setErrorsFe] = useState<any>();
   const [clickedSubmitBtn, setClickedSubmitBtn] = useState<boolean>(false);
 
@@ -52,14 +51,6 @@ export const SignupComponent = () => {
     setErrorsFe(errors);
     return errors;
   };
-
-  useEffect(() => {
-    if (seePass) {
-      setTextPass("hide");
-    } else {
-      setTextPass("show");
-    }
-  }, [seePass]);
 
   return (
     <main className={styles.main}>
@@ -183,7 +174,7 @@ export const SignupComponent = () => {
                     className={[s.textPass, inter.className].join(" ")}
                     onClick={() => setSeePass((seePass) => !seePass)}
                   >
-                    {textPass}
+                    {seePass ? "hide" : "show"}
                   </div>
                 </div>
                 <div
